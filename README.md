@@ -2,10 +2,10 @@
 
 
 ## Team members
-- [Ore Arowobusoye]()
-- [Peter Duong]()
-- [Bill Luu]()
-- [Himika Dastidar]()
+- [Ore Arowobusoye](https://github.com/orearow)
+- [Peter Duong](https://github.com/pduong96)
+- [Bill Luu](https://github.com/bill-luu)
+- [Himika Dastidar](https://github.com/himika-dastidar)
 
 ## Description
 The Halloween Project is a fun and interactive application project that was created for Clio Hackathon October 2024.

@@ -15,6 +15,9 @@ int COORD_DELAY = 500;
 bool isRocking = true;
 bool motionDetected = false;
 
+unsigned long currentMillis = 0;
+unsigned long lastChairRock = 0;
+
 void setup() {
   pinMode(pirPin, INPUT);    // sets PIR pin as the input
   headServo.attach(headServoPin);  // attaches the servo on pin 9 to the Servo object
@@ -38,19 +41,7 @@ void rockChair() {
     delay(500);
 }
 
-bool pollMotionDetected() {
-  motionDetected = digitalRead(pirPin) == HIGH || motionDetected;
-}
-
-void loop() {
-
-
-  motionDetected = false;
-
-  pollMotionDetected();
-  rockChair();
-  pollMotionDetected();
-
+void moveHead() {
   if (motionDetected) {
     // delay before the head turns
     Serial.print("Motion detected");
@@ -72,4 +63,48 @@ void loop() {
     Serial.println("Motion not detected");
     headServo.write(ZERO);
   }
+}
+
+bool pollMotionDetected() {
+  motionDetected = digitalRead(pirPin) == HIGH || motionDetected;
+}
+
+void moveRockingChairServo(int start, int end) {
+    int delta = 0;
+    if (start > end) {
+      delta = -5;
+    } else {
+      delta = 5;
+    }
+    pos = start;
+    while(pos != end) {
+      rockingChairServo.write(pos);               
+      delay(SERVO_ROTATION_DELAY);
+      pos += delta;
+    }
+}
+void rockChair2() {
+
+    // do this every 2000 millis
+    if (currentMillis > lastChairRock + 5000) {
+      moveRockingChairServo(0, 180);
+      moveRockingChairServo(180, 0);
+
+      lastChairRock = currentMillis;
+    }
+}
+
+
+
+void loop() {
+  // motionDetected = false;
+
+  // pollMotionDetected();
+  // rockChair();
+  // pollMotionDetected();
+  // moveHead();
+
+  currentMillis = millis();
+  rockChair2();
+
 }

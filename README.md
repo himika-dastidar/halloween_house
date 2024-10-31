@@ -20,7 +20,8 @@ candy or trigger a spooky surprise. Perfect for adding an element of suspense an
 
 ## Rocking Chair with a doll sitting on it that moves its head
 Imagine a spooky old rocking chair with a creepy doll sitting on it, slowly rocking back and forth. 
-The doll's head is activated by a motion sensor. When you approach the chair, the doll's head will turn to follow you.
+The doll's head is activated by a motion sensor. When you approach the chair, the doll's head will turn towards you 
+and turn back. The doll will then continue rocking back and forth, waiting for the next unsuspecting victim to approach.
 
 
 ## Pumpkin

@@ -27,3 +27,6 @@ Code and schematic can be found here:[Rocking Chair with Ghost](rocking_chair_gh
 
 
 ## Pumpkin
+This pumpkin comes to life with flapping wings and blinking eyes, creating an eerie effect. 
+As the wings move up and down, the eyes move in a circular motion, adding a whimsical touch.
+Code and schematic can be found here: [Pumpkin](pumpkin)
